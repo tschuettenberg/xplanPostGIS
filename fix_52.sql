@@ -202,7 +202,7 @@ DROP TRIGGER IF EXISTS "ins_upd_XP_MimeTypes" ON "XP_Basisobjekte"."XP_MimeTypes
 
 -- referenziere auf XP_ExterneReferenz anstatt auf XP_SpezExterneReferenz
 ALTER TABLE "XP_Basisobjekte"."XP_Bereich_refScan" DROP CONSTRAINT "fk_XP_Bereich_refScan_XP_ExterneReferenz";
-ALTER TABLE "XP_Basisobjekte"."XP_Bereich_refScan" DROP CONSTRAINT "fk_XP_Bereich_refScan_XP_ExterneReferenz" FOREIGN KEY ("externeReferenz" )
+ALTER TABLE "XP_Basisobjekte"."XP_Bereich_refScan" ADD CONSTRAINT "fk_XP_Bereich_refScan_XP_ExterneReferenz" FOREIGN KEY ("externeReferenz" )
     REFERENCES "XP_Basisobjekte"."XP_ExterneReferenz" ("id" )
     ON DELETE NO ACTION
     ON UPDATE CASCADE;
